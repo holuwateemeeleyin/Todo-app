@@ -1,26 +1,27 @@
 import React, { Component } from 'react'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
+import { v4 as uuidv4 } from 'uuid' //added uuid for generating random id
 export default class TodoHomeContainer extends Component {
     state = {
         todos: [
             {
-                id:1,
+                id:uuidv4(),
                 title: 'Outing with the Kids',
                 completed: true
             },
             {
-                id:2,
+                id:uuidv4(),
                 title:'Learn Javascript',
                 completed:true
             },
             {
-                id: 3,
+                id: uuidv4(),
                 title: 'Create a todo App',
                 completed:false
             },
             {
-                id:4,
+                id:uuidv4(),
                 title: 'Rest and enjoy my life',
                 completed:false
             }
@@ -59,7 +60,7 @@ export default class TodoHomeContainer extends Component {
         // console.log('add todo', id);
         // add new todo
         const newTodo = {
-            id:5,
+            id:uuidv4(),
             title: title,
             completed: false
         }
