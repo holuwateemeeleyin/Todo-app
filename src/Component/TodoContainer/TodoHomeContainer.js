@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 export default class TodoHomeContainer extends Component {
     state = {
@@ -52,11 +53,29 @@ export default class TodoHomeContainer extends Component {
         }))
         // console.log('deleted', id);
     }
+
+    // Add todo
+    addTodo=(title)=>{
+        // console.log('add todo', id);
+        // add new todo
+        const newTodo = {
+            id:5,
+            title: title,
+            completed: false
+        }
+        this.setState({
+            todos: [...this.state.todos, newTodo]
+        })
+    }
+
   render() {
       const {todos} = this.state
     return (
     <div className='TodoHomeContainer'>
           <h1>Todo</h1>
+          <AddTodo
+            addTodo={this.addTodo}
+          />
           <TodoList
             todos ={todos}
             onChangeHandler={this.onChangeHandler}
