@@ -32,8 +32,8 @@ export default class TodoHomeContainer extends Component {
           <h1>Todo</h1>
           {
            todo.map((todoList)=>(
-               <ul>
-                   <li key={todoList.id}>
+               <ul key={todoList.id}>
+                   <li>
                        {todoList.title}
                    </li>
                </ul>
