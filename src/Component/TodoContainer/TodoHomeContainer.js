@@ -30,14 +30,15 @@ export default class TodoHomeContainer extends Component {
         // Checking if todo.id is the same with the clicked id,
         // If it is the same flipped the true to false
         // we have to do it by first looping through the data
-        this.setState({
-            todos: this.state.todos.map((todo) => {
+        this.setState( prevState=> ({
+            // using prevState is to get the upto date data
+            todos: prevState.todos.map((todo) => {
                 if(todo.id === id) {
                     todo.completed = !todo.completed
                 }
                 return todo
             })
-        })
+        }))
         // console.log('clicked', id);
     }
   render() {
