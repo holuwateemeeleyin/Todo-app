@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import TodoList from './TodoList'
 export default class TodoHomeContainer extends Component {
     state = {
         todo: [
@@ -30,16 +30,9 @@ export default class TodoHomeContainer extends Component {
     return (
     <div className='TodoHomeContainer'>
           <h1>Todo</h1>
-          {
-           todo.map((todoList)=>(
-               <ul key={todoList.id}>
-                   <li>
-                       {todoList.title}
-                   </li>
-               </ul>
-           ))   
-          }
-
+          <TodoList
+            todo ={todo}
+          />
     </div>
     )
   }
