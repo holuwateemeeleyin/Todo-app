@@ -41,6 +41,17 @@ export default class TodoHomeContainer extends Component {
         }))
         // console.log('clicked', id);
     }
+
+
+    //  Deleting function 
+    deleteTodoItem = (id)=> {
+        this.setState(prevState=> ({
+            todos:prevState.todos.filter((todo)=>{
+                return todo.id !== id
+            })
+        }))
+        // console.log('deleted', id);
+    }
   render() {
       const {todos} = this.state
     return (
@@ -49,6 +60,7 @@ export default class TodoHomeContainer extends Component {
           <TodoList
             todos ={todos}
             onChangeHandler={this.onChangeHandler}
+            deleteTodo={this.deleteTodoItem}
           />
     </div>
     )
