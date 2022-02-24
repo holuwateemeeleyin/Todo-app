@@ -18,7 +18,8 @@
     "react-scripts": "4.0.3",
     "react-sidenav": "^4.0.6",
     "react-simple-sidenav": "^2.0.0",
-    "simple-sidenav": "^1.1.5"
+    "simple-sidenav": "^1.1.5",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
