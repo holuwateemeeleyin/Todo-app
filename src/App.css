@@ -17,7 +17,48 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+  }
+
+  .todoHome_Container {
+    width: 100%;
+    padding: 8rem 10px 4rem;
+  }
+
+  h1 {
+      text-transform: lowercase;
+      font-size: 6rem;
+      text-align: center;
+      color: #f3efef;
+      font-weight: 500;
   }
 
 
-  
+.form-input {
+    display: flex;
+    width: 100%;
+    border-radius: calc(0.5 * 100px);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.input-text {
+    width: 80%;
+    border-radius: calc(0.5 * 100px);
+    border-color: transparent;
+    outline-style: none;
+}
+
+
+.todoItem {
+    list-style: none;
+}
+
+.add-button {
+    background-color: transparent;
+    border-color: transparent;
+    outline-style: none;
+    
+}
