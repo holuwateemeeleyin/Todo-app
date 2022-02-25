@@ -6,36 +6,36 @@ export default class TodoHomeContainer extends Component {
     state = {
         todos: [
             {
-                id:uuidv4(),
+                id: uuidv4(),
                 title: 'Outing with the Kids',
                 completed: true
             },
             {
-                id:uuidv4(),
-                title:'Learn Javascript',
-                completed:true
+                id: uuidv4(),
+                title: 'Learn Javascript',
+                completed: true
             },
             {
                 id: uuidv4(),
                 title: 'Create a todo App',
-                completed:false
+                completed: false
             },
             {
-                id:uuidv4(),
+                id: uuidv4(),
                 title: 'Rest and enjoy my life',
-                completed:false
+                completed: false
             }
         ]
     }
 
-    onChangeHandler = (id)=> {
+    onChangeHandler = (id) => {
         // Checking if todo.id is the same with the clicked id,
         // If it is the same flipped the true to false
         // we have to do it by first looping through the data
-        this.setState( prevState=> ({
+        this.setState(prevState => ({
             // using prevState is to get the upto date data
             todos: prevState.todos.map((todo) => {
-                if(todo.id === id) {
+                if (todo.id === id) {
                     todo.completed = !todo.completed
                 }
                 return todo
@@ -46,9 +46,9 @@ export default class TodoHomeContainer extends Component {
 
 
     //  Deleting function 
-    deleteTodoItem = (id)=> {
-        this.setState(prevState=> ({
-            todos:prevState.todos.filter((todo)=>{
+    deleteTodoItem = (id) => {
+        this.setState(prevState => ({
+            todos: prevState.todos.filter((todo) => {
                 return todo.id !== id
             })
         }))
@@ -56,11 +56,11 @@ export default class TodoHomeContainer extends Component {
     }
 
     // Add todo
-    addTodo=(title)=>{
+    addTodo = (title) => {
         // console.log('add todo', id);
         // add new todo
         const newTodo = {
-            id:uuidv4(),
+            id: uuidv4(),
             title: title,
             completed: false
         }
@@ -69,20 +69,20 @@ export default class TodoHomeContainer extends Component {
         })
     }
 
-  render() {
-      const {todos} = this.state
-    return (
-    <div className='TodoHomeContainer'>
-          <h1>Todo</h1>
-          <AddTodo
-            addTodo={this.addTodo}
-          />
-          <TodoList
-            todos ={todos}
-            onChangeHandler={this.onChangeHandler}
-            deleteTodo={this.deleteTodoItem}
-          />
-    </div>
-    )
-  }
+    render() {
+        const { todos } = this.state
+        return (
+            <div className='todoHome_Container'>
+                <h1>Todo</h1>
+                <AddTodo
+                    addTodo={this.addTodo}
+                />
+                <TodoList
+                    todos={todos}
+                    onChangeHandler={this.onChangeHandler}
+                    deleteTodo={this.deleteTodoItem}
+                />
+            </div>
+        )
+    }
 }
