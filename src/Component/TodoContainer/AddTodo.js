@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { FcPlus } from 'react-icons/fc'
 export default class AddTodo extends Component {
     state = {
         title: ''
@@ -25,13 +25,16 @@ export default class AddTodo extends Component {
 
     render() {
         return (
-            <form onSubmit={this.submitForm}>
+            <form onSubmit={this.submitForm} className='form-input'>
                 <input
                     type='text'
                     value={this.state.title}
                     onChange={this.handleOnChangeTitle}
+                    className='input-text'
                 />
-                <button>Add todo</button>
+                <button className='add-button'>
+                    <FcPlus size='30'/> 
+                </button>
             </form>
         )
     }
