@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { MdDeleteForever } from 'react-icons/md'
 import { BsPencilSquare } from 'react-icons/bs'
+import { IoMdCheckmarkCircle } from 'react-icons/io'
 
 export default class item extends Component {
     state = {
@@ -10,6 +11,13 @@ export default class item extends Component {
     handleOnClickTodo = () => {
         this.setState({
             isEditMode:true
+        })
+    }
+
+    closeEditMode =(e)=> {
+        e.preventDefault()
+        this.setState({
+            isEditMode:false
         })
     }
 
@@ -53,14 +61,16 @@ export default class item extends Component {
                     {todo.title}
                 </span>
 
-                <div className='edit_text-container'>
+                <form className='edit_todo-form' style={editMode} onSubmit={this.closeEditMode}>
                     <input type='text' 
                         value={todo.title}
-                        style={editMode}
                         onChange={(e)=> updateTodo(e.target.value, todo.id)}
                         className='edit-text'
                     />
-                </div>
+                    <button className='updateDone-icon'>
+                        <IoMdCheckmarkCircle size='25px' color='green'/>
+                    </button>
+                </form>
             </li>
 
         )
