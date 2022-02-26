@@ -90,12 +90,27 @@ body {
     outline-style: none;
 }
 
+.edit_todo-form {
+    display: flex;
+    width: 100%;
+    border-color: rgb(255, 251, 3);
+    justify-content: center;
+    border-bottom: 1px solid #eaeaea;
+}
 
 .edit-text {
-    width: 100%;
+    width: 80%;
     margin-top: 8px;
     padding: 8px;
-    border: 1px solid #dfdfdf;
     border-radius: calc(0.5 * 100px);
-    outline-color: green;
+    outline-style: none;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.updateDone-icon {
+    background-color: transparent;
+    outline-style: none;
+    border-color: transparent;
+    cursor: pointer;
 }
