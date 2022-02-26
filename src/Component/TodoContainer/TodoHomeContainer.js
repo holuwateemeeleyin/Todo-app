@@ -69,6 +69,17 @@ export default class TodoHomeContainer extends Component {
         })
     }
 
+    updateTodo = (updateTitle, id) =>{
+        this.setState({
+            todos: this.state.todos.map((todo)=> {
+                if(todo.id === id) {
+                    todo.title = updateTitle
+                }
+                return todo
+            })
+        })
+    }
+
     render() {
         const { todos } = this.state
         return (
@@ -81,6 +92,7 @@ export default class TodoHomeContainer extends Component {
                     todos={todos}
                     onChangeHandler={this.onChangeHandler}
                     deleteTodo={this.deleteTodoItem}
+                    updateTodo={this.updateTodo}
                 />
             </div>
         )
