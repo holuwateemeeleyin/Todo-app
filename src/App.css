@@ -73,11 +73,29 @@ body {
     height: 40px;
 }
 
-
+.edit-button {
+    float: right;
+    border-color: transparent ;
+    cursor: pointer;
+    outline-style: none;
+    width: 40px;
+    height: 40px;
+    border-radius: calc(0.5 * 100px);
+    margin-top: -10px;
+}
 
 .add-button {
     background-color: transparent;
     border-color: transparent;
     outline-style: none;
-    
+}
+
+
+.edit-text {
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid #dfdfdf;
+    border-radius: calc(0.5 * 100px);
+    outline-color: green;
 }
