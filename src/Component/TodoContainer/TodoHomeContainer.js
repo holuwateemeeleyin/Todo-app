@@ -28,6 +28,25 @@ export default class TodoHomeContainer extends Component {
         ]
     }
 
+    componentDidUpdate (prevProps, prevState){
+        // If what is entered into the state is not in the state
+        // store it in the local storage
+        if (prevState.todos !== this.state.todos){
+            const data = JSON.stringify(this.state.todos)
+            localStorage.setItem("todos", data)
+        }
+    }
+
+    componentDidMount(){
+        const data = localStorage.getItem("todos")
+        const displayTodos = JSON.parse(data)
+        if (displayTodos){
+            this.setState({
+                todos: displayTodos
+            })
+        }
+    }
+
     onChangeHandler = (id) => {
         // Checking if todo.id is the same with the clicked id,
         // If it is the same flipped the true to false
