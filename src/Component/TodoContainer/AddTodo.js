@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { FcPlus } from 'react-icons/fc'
-// import { ToastContainer, toast } from 'react-toastify'
 import toast, { Toaster } from 'react-hot-toast'
 export default class AddTodo extends Component {
     state = {
@@ -13,8 +12,6 @@ export default class AddTodo extends Component {
         })
     }
 
-    notify = () => toast("wow so easy")
-
     submitForm = (e) => {
         e.preventDefault()
         // console.log(this.state.title);
@@ -24,10 +21,7 @@ export default class AddTodo extends Component {
                 title: ''
             })
         } else {
-            toast('You have to add an item', {
-                position: 'top-center',
-                autoClose: 5000
-            })
+            toast.error('You have to add an item')
         }
     }
 
