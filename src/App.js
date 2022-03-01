@@ -9,6 +9,7 @@ const App = () => {
     <div className='app_container'>
       <Routes>
         <Route exact path='/' element={<TodoHomeContainer />} />
+        <Route path='*' element={<NotFound />}/>
       </Routes>
     </div>
 
